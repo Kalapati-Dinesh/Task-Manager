@@ -2,8 +2,8 @@ import { useState } from "react"
 
 export default function Taskform({addTask}) {
   const [task, setTask] = useState('');
-  const [priority, setPriority] = useState('medium');
-  const [category, setCategory] = useState('General');
+  const [priority, setPriority] = useState('med');
+  const [category, setCategory] = useState('gen');
 
   const handlesubmit = (e) => {
     e.preventDefault();
@@ -11,8 +11,8 @@ export default function Taskform({addTask}) {
 
     //reset
     setTask('');
-    setPriority("medium");
-    setCategory("General");
+    setPriority("med");
+    setCategory("gen");
   }
 
   return (
@@ -26,15 +26,15 @@ export default function Taskform({addTask}) {
 
       <div id='btns'>
       <select value={priority} onChange={(e)=> setPriority(e.target.value)}>
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
+        <option value="high">High</option>
+        <option value="med">Medium</option>
         <option value="low">low</option>
       </select>
 
       <select value={category} onChange={(e)=>setCategory(e.target.value)}>
-        <option value="general">General</option>
+        <option value="gen">General</option>
         <option value="work">work</option>
-        <option value="personal">personal</option>
+        <option value="per">personal</option>
       </select>
       </div>
 

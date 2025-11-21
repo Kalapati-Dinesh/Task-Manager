@@ -9,7 +9,7 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(()=>{
-    localStorage.setItem("tasks",JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
   });
 
   const addTask = (task)=>{
@@ -33,8 +33,8 @@ export default function App() {
   return (
     <div className='App'>
       <header>
-        <h1 className='title'>TaskBuddy</h1>
-        <p className='tagline'>Your friendly Task Manager</p>
+        <h1 className='title'>Daily Task Planner</h1>
+        <p className='tagline'><i>Manage Tasks Effortlessly</i></p>
       </header>
       <TaskForm addTask = {addTask}/>
       <TaskList tasks = {tasks}
@@ -42,7 +42,7 @@ export default function App() {
       deleteTask = {deleteTask} />
       <Progresstracker tasks = {tasks}/>
 
-      {tasks.length>0 && (<button onClick={clearTasks} className='clear-btn'>Clear all Task</button>)}
+      {tasks.length>0 && (<button onClick={clearTasks} className='clear-btn'>Clear All</button>)}
     
     </div>
 
